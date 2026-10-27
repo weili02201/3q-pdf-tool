@@ -1,0 +1,140 @@
+3Q PDF（pdf_tool / pdf_core / pdf_cli / pdf_mcp）
+============================================
+版本 2.0 ｜ 2026-10-26
+
+版权 (C) 2026 三扣科技 (3Q Tech)，联系方式 QQ：397218026。
+自媒体：3Q科技。
+
+本项目整体以 GNU Affero General Public License v3.0（AGPL-3.0）授权，
+完整文本见同目录 LICENSE 文件。
+
+本项目为「基于 PyMuPDF 的作品」（work based on the Program），
+因此依据 AGPL-3.0 第 5 条，本作品必须以 AGPL-3.0 整体授权，
+不能改用 MIT / Apache-2.0 / BSD 等宽松许可证。
+
+
+--------------------------------------------------------------------
+〇、关于付费：你付的钱买的是什么
+--------------------------------------------------------------------
+
+本作品以 AGPL-3.0 授权，可自由使用、修改、再分发（同样以 AGPL-3.0）。
+商业使用同样是许可已经授予你的权利，无需另行付费或另行授权。
+
+任何人为获得本作品的副本而支付的费用，购买的是「分发与支持」服务：
+一个已经构建好的、可直接运行的 Windows 可执行文件，官方构建版本，
+以及来自作者的电子邮件答疑。许可本身依 AGPL-3.0 免费授予，从来如此。
+
+换言之：源码在这里，你可以完全免费地自行构建、使用、分发。
+付费只是买省事。
+
+
+--------------------------------------------------------------------
+一、包含的第三方作品
+--------------------------------------------------------------------
+
+1) PyMuPDF 1.25.2
+   来源：https://pypi.org/project/PyMuPDF/  https://github.com/pymupdf/PyMuPDF
+   版权：Copyright (C) 2006-2025 Artifex Software, Inc.
+   许可：GNU AFFERO GPL 3.0（或其商业许可，见下）
+   实证：安装包元数据 `License: GNU AFFERO GPL 3.0`，`Author: Artifex`
+        （site-packages/pymupdf-1.25.2.dist-info/METADATA）
+
+2) PyMuPDFb 1.24.3（MuPDF 预编译共享库，含 mupdfcpp64.dll）
+   来源：https://pypi.org/project/PyMuPDFb/
+   版权：Copyright (C) Artifex Software, Inc.
+   许可：GNU AFFERO GPL 3.0
+   实证：site-packages/PyMuPDFb-1.24.3.dist-info/METADATA
+
+3) MuPDF 1.25.2（C 渲染引擎，被 PyMuPDF 静态链接进 .pyd）
+   版权：Copyright (C) 2006-2025 Artifex Software, Inc.
+   许可：AGPL-3.0 或商业许可（二选一）
+
+4) tkinterdnd2（可选，仅 GUI 拖拽用，非核心依赖）
+   许可：BSD-3-Clause 风格（见其自带说明）
+
+5) 本工具运行时依赖的第三方文档处理链（按用户在机器上是否安装决定是否启用）：
+   - Microsoft Word / Excel（COM，仅 office-to-pdf 功能用到，非本作品部件）
+   - python-docx / openpyxl（仅 pdf-to-word / pdf-to-excel 功能用到）
+
+
+--------------------------------------------------------------------
+二、商业授权通道（不想走 AGPL 时的唯一出口）
+--------------------------------------------------------------------
+
+PyMuPDF / MuPDF 采用双许可：AGPL-3.0 或 Artifex 商业许可。
+Artifex Software, Inc. 是 MuPDF 的唯一商业授权代理。
+
+  Artifex Software, Inc.
+  39 Mesa Street, Suite 108A, San Francisco, CA 94129, United States
+  https://artifex.com  /  licensing@artifex.com
+
+官方原话（PyMuPDF 文档 About 页）：
+  "PyMuPDF and MuPDF are now available under both, open-source AGPL and
+   commercial license agreements. ... If you determine you cannot meet the
+   requirements of the AGPL, please contact Artifex for more information
+   regarding a commercial license."
+
+
+--------------------------------------------------------------------
+三、网络服务场景的义务（AGPL-3.0 第 13 条）
+--------------------------------------------------------------------
+
+本作品若以「通过网络远程对外提供服务」的形态运行（例如 HTTP 形式的
+MCP Server、Web API、SaaS），依据 AGPL-3.0 第 13 条，运营者必须
+向所有通过网络与之交互的用户，**显著地**提供获取本版本「对应源码」
+（Corresponding Source）的机会，且不得收费。
+
+对应源码 = 本目录下全部 .py 源文件 + LICENSE + NOTICE + 构建脚本。
+
+合规做法任选其一：
+  - 在服务响应或界面中提供显著可见的「源代码」链接/下载地址；
+  - 在 MCP Server 的初始化响应或工具返回值中附上源码地址；
+  - 在公网可达的 Git 仓库或静态站公开全部源码。
+
+注：以 stdio 形式在用户本机运行的 MCP Server 属于「分发（convey）」
+而非「远程网络交互」，第 13 条不触发，但仍须满足第 4/5/6 条
+（即：随附本 LICENSE 与 NOTICE，并以 AGPL-3.0 提供源码）。
+
+
+--------------------------------------------------------------------
+四、商标
+--------------------------------------------------------------------
+
+Artifex、Artifex 商标、MuPDF、MuPDF 商标为 Artifex Software Inc.
+的注册商标。本作品使用这些名称仅用于说明其依赖来源，
+不代表 Artifex 对本作品的背书或赞助。
+
+
+--------------------------------------------------------------------
+五、免责
+--------------------------------------------------------------------
+
+本软件按「原样」提供，不附任何明示或默示的担保。
+详见 LICENSE 第 15、16 条。
+
+
+--------------------------------------------------------------------
+六、附加条款（AGPL-3.0 第 7 条）
+--------------------------------------------------------------------
+
+依据 AGPL-3.0 第 7 条，本作品在 AGPL-3.0 之上附加以下条款。
+这些条款不限制、也不减少 AGPL-3.0 已经授予你的任何权利
+（包括商业使用、再分发、以及为分发收取费用的权利）。
+
+(a) 商标（§7(e)）
+    「3Q PDF」「3Q科技」「三扣科技」及其标识为三扣科技的商标。
+    本许可不授予任何使用上述名称或标识的权利。你再分发本作品
+    或其修改版时，不得以这些名称命名、不得使用其标识、不得
+    暗示获得原作者背书。
+
+(b) 署名保留（§7(b)）
+    你再分发本作品或其修改版时，必须完整保留本 NOTICE 文件、
+    LICENSE 文件，以及源码中各文件头部的版权声明。
+
+(c) 修改版标注（§7(c)）
+    如果你修改了本作品并对外分发，必须在界面「关于」处、命令行
+    --version 输出、以及随附文档中显著标明「本版本已被修改，
+    非三扣科技原版」。不得以原版名义发布修改版。
+
+(d) 免责（§7(a)）
+    本作品按「原样」提供，不附任何明示或默示担保。
