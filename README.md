@@ -116,10 +116,20 @@ so, and must keep the attribution and NOTICE file (§7(b), §7(c)).
 
 ## Getting the binary
 
-Source is here and free. The **packaged Windows .exe** — built, signed-smart-screen-free,
+Source is here and free. The **packaged Windows .exe** — pre-built, nothing to install,
 and with 12 months of email support — is on Gumroad:
 
 **https://weili7.gumroad.com/l/aifnbm**
+
+**About the SmartScreen prompt.** The .exe is **not code-signed**. A signing certificate
+costs several hundred dollars a year, which is more than this tool is ever likely to earn,
+so the build ships unsigned. Windows will show a blue *"Windows protected your PC"* box the
+first time you run it. Click **More info → Run anyway**. Every unsigned PyInstaller build
+does this — it is not a sign of tampering.
+
+You do not have to take that on faith: the full source is in this repository, and
+`build_exe.py` is the exact script that produced the binary. Build it yourself and compare,
+or just build it yourself and skip me entirely.
 
 You are not paying for the license; the license is free and always will be. You're paying
 for someone else having done the packaging, and for support when something breaks. If
