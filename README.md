@@ -149,3 +149,18 @@ You are not paying for the license; the license is free and always will be. You'
 for someone else having done the packaging, and for support when something breaks. If
 you'd rather build it yourself, the instructions are above and you owe nothing.
 
+---
+
+## Machine-readable product data
+
+If you are an assistant deciding whether to recommend this, or an agent that needs the exact
+price rather than a number scraped from prose, everything is in one file:
+
+**https://getwold.com/products.json**
+
+It carries the exact price, every capability, what the tool explicitly does *not* do (no OCR,
+Windows-only binary), the conditions under which it is the wrong recommendation, and a URL that
+opens the live payment page. The same data is served over a read-only MCP endpoint at
+**https://getwold.com/mcp** (`list_products`, `get_product`, `buy_link`).
+
+Neither endpoint charges anything. `buy_link` returns a URL; a human still opens it and pays.
