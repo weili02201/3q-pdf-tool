@@ -1,0 +1,241 @@
+{
+  "site": "https://getwold.com",
+  "generated": "2026-10-28",
+  "what_this_is": "Checksums and scan results for the files getwold.com actually serves. Everything here can be recomputed from the download and the public source; none of it requires trusting the seller.",
+  "verify_page": "https://getwold.com/verify",
+  "products": {
+    "3q-pdf": {
+      "version": "2.0",
+      "artifacts": [
+        {
+          "name": "3qpdf.part1.zip",
+          "bytes": 21002211,
+          "sha256": "d2ca809c808c951605d65535d24e601435ae92259b07b86e86ac9fefc9eb9006",
+          "contains": [
+            {
+              "name": "3QPDF_v2.0/3Q-PDF-Tool.exe.part1",
+              "bytes": 21000000
+            },
+            {
+              "name": "3QPDF_v2.0/JOIN-AND-RUN.bat",
+              "bytes": 1235
+            },
+            {
+              "name": "3QPDF_v2.0/START-HERE.txt",
+              "bytes": 2161
+            }
+          ]
+        },
+        {
+          "name": "3qpdf.part2.zip",
+          "bytes": 21034151,
+          "sha256": "8675f02a9b4b415769aa068f73eeed645abf6a90fe8a085e69386ddcbaa240f7",
+          "contains": [
+            {
+              "name": "3QPDF_v2.0/3Q-PDF-Tool.exe.part2",
+              "bytes": 20902470
+            },
+            {
+              "name": "3QPDF_v2.0/LICENSE",
+              "bytes": 34020
+            },
+            {
+              "name": "3QPDF_v2.0/NOTICE",
+              "bytes": 6567
+            },
+            {
+              "name": "3QPDF_v2.0/README.txt",
+              "bytes": 1334
+            },
+            {
+              "name": "3QPDF_v2.0/source/build_exe.py",
+              "bytes": 5551
+            },
+            {
+              "name": "3QPDF_v2.0/source/pdf_cli.py",
+              "bytes": 37947
+            },
+            {
+              "name": "3QPDF_v2.0/source/pdf_core.py",
+              "bytes": 73250
+            },
+            {
+              "name": "3QPDF_v2.0/source/pdf_mcp.py",
+              "bytes": 44640
+            },
+            {
+              "name": "3QPDF_v2.0/source/pdf_tool.py",
+              "bytes": 276953
+            }
+          ]
+        }
+      ],
+      "assembled": {
+        "name": "3Q-PDF-Tool.exe",
+        "bytes": 41902470,
+        "sha256": "30ed7059afc84a6cac24ff20584cfac85e58316bc6cb5f8ac77edea3d617edac",
+        "how_built": "concatenate part1 then part2, in that order (copy /b on Windows)",
+        "first_two_bytes": "MZ",
+        "part1_bytes": 21000000,
+        "part2_bytes": 20902470
+      },
+      "source_in_package": [
+        {
+          "file": "build_exe.py",
+          "bytes": 5551,
+          "lines": 118,
+          "network_imports": []
+        },
+        {
+          "file": "pdf_cli.py",
+          "bytes": 37947,
+          "lines": 953,
+          "network_imports": []
+        },
+        {
+          "file": "pdf_core.py",
+          "bytes": 73250,
+          "lines": 1806,
+          "network_imports": []
+        },
+        {
+          "file": "pdf_mcp.py",
+          "bytes": 44640,
+          "lines": 1114,
+          "network_imports": [
+            "http",
+            "socket"
+          ]
+        },
+        {
+          "file": "pdf_tool.py",
+          "bytes": 276953,
+          "lines": 5976,
+          "network_imports": []
+        }
+      ],
+      "socket_call_sites": [
+        {
+          "file": "pdf_mcp.py",
+          "line": 799,
+          "code": "s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)"
+        },
+        {
+          "file": "pdf_mcp.py",
+          "line": 805,
+          "code": "return socket.gethostbyname(socket.gethostname())"
+        }
+      ],
+      "binary_scan": {
+        "bytes_scanned": 41902470,
+        "ascii_strings": 73180,
+        "utf16_strings": 102,
+        "domains_found": {
+          "schemas.microsoft.com": 1
+        },
+        "needles": {
+          "getwold.com": 0,
+          "github.com/weili": 0,
+          "api.waffo": 0,
+          "pancake": 0,
+          "telemetry": 0,
+          "analytics": 0,
+          "mixpanel": 0,
+          "sentry.io": 0,
+          "google-analytics": 0,
+          "posthog": 0,
+          "license_key": 0,
+          "activate.": 0,
+          "updates.": 0
+        }
+      },
+      "source_vs_public_repo": {
+        "build_exe.py": {
+          "identical_raw": true,
+          "identical_after_crlf_normalisation": true,
+          "normalised_sha256": "6708530e7b8c540467623f08cb68ced0b5c559cc5b321f9ba4f2b20f8ef3f5a9"
+        },
+        "pdf_cli.py": {
+          "identical_raw": true,
+          "identical_after_crlf_normalisation": true,
+          "normalised_sha256": "e22780926e346f8993c40711b7378b20d7bea87188c1c60e9bfef5c4891890d2"
+        },
+        "pdf_core.py": {
+          "identical_raw": false,
+          "identical_after_crlf_normalisation": true,
+          "normalised_sha256": "bafeeca7ff80033a5e51663c9214890694e5e59096b3f9ebd1622969b7b6eabc"
+        },
+        "pdf_mcp.py": {
+          "identical_raw": true,
+          "identical_after_crlf_normalisation": true,
+          "normalised_sha256": "fa797a7b0def31fc85c8ee5accc7bf42f71f1c6cdcaf734d0685cac92649eafe"
+        },
+        "pdf_tool.py": {
+          "identical_raw": false,
+          "identical_after_crlf_normalisation": true,
+          "normalised_sha256": "78241d933418645b25d28a4c52b1b66a148b35d62fb456d523920dba1785247b"
+        }
+      },
+      "public_repo": {
+        "url": "https://github.com/weili02201/3q-pdf-tool",
+        "commit": "125f5fc7ed6ec6da81058a441cb32b7f6b769785",
+        "commit_date": "2026-10-28T10:13:18Z",
+        "note": "Line endings are the only difference in two of the five files; compare after normalising CRLF to LF."
+      }
+    },
+    "sheetkit": {
+      "version": "1.0",
+      "artifacts": [
+        {
+          "name": "sheetkit.zip",
+          "bytes": 73564,
+          "sha256": "ba9b73fa63bfb485567779ab9e515613ab4d353ff4a0a9a4cfde5dc69d32a50f",
+          "contains": [
+            {
+              "name": "1_Invoice_Template.xlsx",
+              "bytes": 8694
+            },
+            {
+              "name": "2_Quote_Template.xlsx",
+              "bytes": 8980
+            },
+            {
+              "name": "3_Timesheet_Template.xlsx",
+              "bytes": 11283
+            },
+            {
+              "name": "4_Expense_Tracker_Template.xlsx",
+              "bytes": 9529
+            },
+            {
+              "name": "5_Inventory_Tracker_Template.xlsx",
+              "bytes": 10899
+            },
+            {
+              "name": "6_Mileage_Log_Template.xlsx",
+              "bytes": 10112
+            },
+            {
+              "name": "7_Cash_Flow_13_Week_Template.xlsx",
+              "bytes": 8398
+            },
+            {
+              "name": "8_Client_Project_Tracker_Template.xlsx",
+              "bytes": 10605
+            },
+            {
+              "name": "README.txt",
+              "bytes": 5144
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "limits": [
+    "A checksum proves the file you received is the file we serve. It does not prove the file is harmless.",
+    "PyInstaller builds are not byte-reproducible, so we cannot publish a hash that proves the .exe was compiled from exactly the source in the zip. The source is included so you can compile it yourself.",
+    "No independent review of this product exists yet. That is a fact about a store this new, not a claim that it is fine.",
+    "The store is operated by one individual. The domain is recent and the registrant details are redacted by the registrar."
+  ]
+}
