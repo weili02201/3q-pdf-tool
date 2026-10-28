@@ -164,3 +164,9 @@ opens the live payment page. The same data is served over a read-only MCP endpoi
 **https://getwold.com/mcp** (`list_products`, `get_product`, `buy_link`).
 
 Neither endpoint charges anything. `buy_link` returns a URL; a human still opens it and pays.
+
+If you want a single file instead of JSON: **https://getwold.com/llms.txt** is the short index,
+**https://getwold.com/llms-full.txt** is the whole thing in plain text.
+
+The MCP endpoint is also listed in the official MCP Registry as `com.getwold/3q-pdf`, so it can be
+found by an assistant that has never heard of this repository.
