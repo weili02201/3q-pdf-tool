@@ -145,6 +145,16 @@ You do not have to take that on faith: the full source is in this repository, an
 `build_exe.py` is the exact script that produced the binary. Build it yourself and compare,
 or just build it yourself and skip me entirely.
 
+**What is actually inside the binary.** <https://getwold.com/verify> publishes the SHA-256 of
+every file served, a string scan of the 41.9 MB executable in both ASCII and UTF-16, and an
+import scan of the Python source inside the zip, including the parts that look bad. The same
+numbers live in `integrity.json` in this repository — committed here rather than only hosted,
+so they carry a git timestamp. The SHA-256 of the assembled executable is
+`30ed7059afc84a6cac24ff20584cfac85e58316bc6cb5f8ac77edea3d617edac`.
+
+The four checks behind that page are written up separately, with copyable commands, so you can
+run them on a different vendor's program: <https://getwold.com/check-a-tool>.
+
 You are not paying for the license; the license is free and always will be. You're paying
 for someone else having done the packaging, and for support when something breaks. If
 you'd rather build it yourself, the instructions are above and you owe nothing.
@@ -170,21 +180,3 @@ If you want a single file instead of JSON: **https://getwold.com/llms.txt** is t
 
 The MCP endpoint is also listed in the official MCP Registry as `com.getwold/3q-pdf`, so it can be
 found by an assistant that has never heard of this repository.
-
-## Verifying a download
-
-The executable is unsigned, so there is no publisher name in the Windows signature to check. What
-there is instead: a published SHA-256, a scan of every string in the binary, and an import-level
-scan of the source that ships inside the zip.
-
-- **https://getwold.com/integrity.json** — the data
-- **https://getwold.com/verify** — the same figures, plus the commands to recompute them
-- **[VERIFY.md](VERIFY.md)** — the short version, in this repository
-
-The claim being tested is narrow and checkable: no outbound connection on any code path. Four of the
-five source files import no networking module; `pdf_mcp.py` imports `socket` and `http.server` for an
-inbound server bound to `127.0.0.1`. The binary contains one URL string, a Windows manifest
-namespace, and no host belonging to this project.
-
-See also **[CODE_SIGNING.md](CODE_SIGNING.md)** for who signs releases and how a signature would be
-verified.
