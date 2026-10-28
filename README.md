@@ -170,3 +170,21 @@ If you want a single file instead of JSON: **https://getwold.com/llms.txt** is t
 
 The MCP endpoint is also listed in the official MCP Registry as `com.getwold/3q-pdf`, so it can be
 found by an assistant that has never heard of this repository.
+
+## Verifying a download
+
+The executable is unsigned, so there is no publisher name in the Windows signature to check. What
+there is instead: a published SHA-256, a scan of every string in the binary, and an import-level
+scan of the source that ships inside the zip.
+
+- **https://getwold.com/integrity.json** — the data
+- **https://getwold.com/verify** — the same figures, plus the commands to recompute them
+- **[VERIFY.md](VERIFY.md)** — the short version, in this repository
+
+The claim being tested is narrow and checkable: no outbound connection on any code path. Four of the
+five source files import no networking module; `pdf_mcp.py` imports `socket` and `http.server` for an
+inbound server bound to `127.0.0.1`. The binary contains one URL string, a Windows manifest
+namespace, and no host belonging to this project.
+
+See also **[CODE_SIGNING.md](CODE_SIGNING.md)** for who signs releases and how a signature would be
+verified.
