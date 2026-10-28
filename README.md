@@ -64,7 +64,7 @@ enum value in machine-readable form. An agent should call that first.
 
 ```bash
 python pdf_mcp.py --transport http --port 8765 \
-                  --source-url https://github.com/<you>/3q-pdf \
+                  --source-url https://github.com/weili02201/3q-pdf-tool \
                   --allow-dir D:\pdf_in --allow-dir D:\pdf_out
 ```
 
@@ -103,6 +103,19 @@ that's the usual Tcl/Tk packaging issue — try `pip install tkinterdnd2 --upgra
 
 ---
 
+## Free, no-install tools
+
+Two jobs come up often enough to deserve a web version. Both run entirely in the browser —
+the file is read from your disk, processed locally, and never uploaded:
+
+- **Merge / split PDF, extract a page range** — https://getwold.com/pdf-tools
+- **CSV ⇄ Excel, with GBK and UTF-8 handling** — https://getwold.com/csv-to-excel
+
+If the file is sensitive enough that you don't want it in a browser tab either, use 3Q PDF.
+That is the whole point of it being an offline executable.
+
+---
+
 ## License
 
 **AGPL-3.0.** This project is a work based on [PyMuPDF](https://pymupdf.readthedocs.io/),
@@ -116,10 +129,11 @@ so, and must keep the attribution and NOTICE file (§7(b), §7(c)).
 
 ## Getting the binary
 
-Source is here and free. The **packaged Windows .exe** — pre-built, nothing to install,
-and with 12 months of email support — is on Gumroad:
+Source is here and free. If you would rather not set up a Python toolchain, the
+**packaged Windows .exe** — pre-built, nothing to install, one-time payment, email
+support from a real person — is here:
 
-**https://weili7.gumroad.com/l/aifnbm**
+**https://getwold.com/pdf**
 
 **About the SmartScreen prompt.** The .exe is **not code-signed**. A signing certificate
 costs several hundred dollars a year, which is more than this tool is ever likely to earn,
@@ -134,3 +148,4 @@ or just build it yourself and skip me entirely.
 You are not paying for the license; the license is free and always will be. You're paying
 for someone else having done the packaging, and for support when something breaks. If
 you'd rather build it yourself, the instructions are above and you owe nothing.
+
